@@ -1,6 +1,6 @@
 ﻿namespace e_commerce_server.DTOs
 {
-    public class ProductDTO
+    public class ProductDto
     {
     }
 }

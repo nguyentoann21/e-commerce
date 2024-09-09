@@ -1,6 +1,6 @@
 ﻿namespace e_commerce_server.DTOs
 {
-    public class LoginDTO
+    public class LoginDto
     {
     }
 }

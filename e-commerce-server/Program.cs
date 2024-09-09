@@ -1,5 +1,7 @@
 
 using e_commerce_server.DataAccess;
+using e_commerce_server.Repositories;
+using e_commerce_server.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_server
@@ -23,6 +25,9 @@ namespace e_commerce_server
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            // Register scoped services
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+
             var app = builder.Build();
 
             //init data to db from SeedData.cs
@@ -41,11 +46,11 @@ namespace e_commerce_server
 
             app.UseHttpsRedirection();
 
-            //save static files
+            //save static files - upload files
             app.UseStaticFiles();
+
             //enable authen and author middleware
             app.UseAuthentication();
-
             app.UseAuthorization();
 
 
