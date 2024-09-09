@@ -1,4 +1,7 @@
 
+using e_commerce_server.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 namespace e_commerce_server
 {
     public class Program
@@ -13,8 +16,21 @@ namespace e_commerce_server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
+            //Configure Entity Framework Core with SQL Server
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
             var app = builder.Build();
+
+            //init data to db from SeedData.cs
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                SeedData.Initialize(services);
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -24,6 +40,11 @@ namespace e_commerce_server
             }
 
             app.UseHttpsRedirection();
+
+            //save static files
+            app.UseStaticFiles();
+            //enable authen and author middleware
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
