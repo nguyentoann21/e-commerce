@@ -32,6 +32,11 @@ namespace e_commerce_server.DataAccess
                 .HasOne(ur => ur.Role)
                 .WithMany(ur => ur.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
+
+            // Configuring the price of the product with a total 18 digits and 2 decimals
+            modelBuilder.Entity<Product>()
+                .Property(p => p.ProductPrice)
+                .HasColumnType("decimal(18,2)");
         }
     }
 }

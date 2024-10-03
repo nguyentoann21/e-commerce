@@ -18,9 +18,9 @@ namespace e_commerce_server.Models
         public int ProductQuantity { get; set; } = 0;
         [Required]
         [Display(Name = "ProductDiscount")]
-        [Range(0, int.MaxValue)]
+        [Range(0, 100)]
         [DisplayFormat(DataFormatString = "{0:0}%")]
-        public decimal ProductDiscount { get; set; } = 0;
+        public int ProductDiscount { get; set; } = 0;
         public int ProductRate { get; set; } = 0;
         public DateTime CreatedAt { get; set; }
         public Category? Categories { get; set; }

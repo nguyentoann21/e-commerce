@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\147ba650-c3a5-41cd-a53e-cbc9f1b2c5e9_1.jpeg",
+      "PackagePath": "staticwebassets\\avt\\147ba650-c3a5-41cd-a53e-cbc9f1b2c5e9_1.jpeg"
+    },
+    {
+      "Id": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\18351397-8eb5-4e89-917c-d7f6948bcdb9_1.jpeg",
+      "PackagePath": "staticwebassets\\avt\\18351397-8eb5-4e89-917c-d7f6948bcdb9_1.jpeg"
+    },
+    {
+      "Id": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg",
+      "PackagePath": "staticwebassets\\avt\\245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.e-commerce-server.props",
+      "PackagePath": "build\\e-commerce-server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.e-commerce-server.props",
+      "PackagePath": "buildMultiTargeting\\e-commerce-server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.e-commerce-server.props",
+      "PackagePath": "buildTransitive\\e-commerce-server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.e-commerce-server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,7 +1,10 @@
 
 using e_commerce_server.DataAccess;
+using e_commerce_server.Middleware;
 using e_commerce_server.Repositories;
 using e_commerce_server.Repositories.Interfaces;
+using e_commerce_server.Services;
+using e_commerce_server.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace e_commerce_server
@@ -27,32 +30,61 @@ namespace e_commerce_server
 
             // Register scoped services
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IStorage, Storage>();
+
+            // Configuring CORS to allow all origins, headers, and methods
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
+            // Register logging services for the application
+            builder.Services.AddLogging();
 
             var app = builder.Build();
 
-            //init data to db from SeedData.cs
+            // Initialize seed data into the database from SeedData.cs
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 SeedData.Initialize(services);
             }
 
-            // Configure the HTTP request pipeline.
+            // Configure the HTTP request pipeline
             if (app.Environment.IsDevelopment())
             {
+                // Enable Swagger documentation
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                // Enable Swagger UI for testing APIs
+                app.UseSwaggerUI(x =>
+                {
+                    x.SwaggerEndpoint("/swagger/v1/swagger.json", "e_commerce_server V1");
+                    // Set Swagger UI
+                    x.RoutePrefix = "swagger";
+                });
             }
+
+            // Enable logging middleware
+            app.UseMiddleware<LoggingMiddleware>();
+
+            // Enable CORS policy named "AllowAll" globally
+            app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
 
-            //save static files - upload files
+            // Save static files - upload files
             app.UseStaticFiles();
 
-            //enable authen and author middleware
+            // Enable authen and author middleware
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseExceptionHandler("/error");
+            app.UseHsts();
 
             app.MapControllers();
 

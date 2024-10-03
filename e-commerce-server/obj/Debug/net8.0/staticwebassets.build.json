@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "x1jSeSkbDxw4rkI31nECM4V9mVcuwwyivN+6PWqOox0=",
+  "Source": "e-commerce-server",
+  "BasePath": "_content/e-commerce-server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "e-commerce-server\\wwwroot",
+      "Source": "e-commerce-server",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\147ba650-c3a5-41cd-a53e-cbc9f1b2c5e9_1.jpeg",
+      "SourceId": "e-commerce-server",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "RelativePath": "avt/147ba650-c3a5-41cd-a53e-cbc9f1b2c5e9_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avt\\147ba650-c3a5-41cd-a53e-cbc9f1b2c5e9_1.jpeg"
+    },
+    {
+      "Identity": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\18351397-8eb5-4e89-917c-d7f6948bcdb9_1.jpeg",
+      "SourceId": "e-commerce-server",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "RelativePath": "avt/18351397-8eb5-4e89-917c-d7f6948bcdb9_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avt\\18351397-8eb5-4e89-917c-d7f6948bcdb9_1.jpeg"
+    },
+    {
+      "Identity": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg",
+      "SourceId": "e-commerce-server",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "RelativePath": "avt/245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avt\\245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg"
+    }
+  ]
+}
