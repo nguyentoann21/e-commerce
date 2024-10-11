@@ -9,6 +9,7 @@ E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\e-commerce-server.pdb
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Azure.Core.dll
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Azure.Identity.dll
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\BCrypt.Net-Next.dll
+E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 E:\dotnet\e-commerce\e-commerce-server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll

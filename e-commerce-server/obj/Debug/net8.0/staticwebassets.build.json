@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x1jSeSkbDxw4rkI31nECM4V9mVcuwwyivN+6PWqOox0=",
+  "Hash": "+KZKHAq1O+k+R4imuL/Dnjw3eCcEALF1A0A56XceKiE=",
   "Source": "e-commerce-server",
   "BasePath": "_content/e-commerce-server",
   "Mode": "Default",
@@ -72,6 +72,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avt\\245d443c-790b-44d8-aec4-d31b2ae429f4_1.jpeg"
+    },
+    {
+      "Identity": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\ccc323e5-b19d-48a1-861a-eee1ff3bdc89_1.jpeg",
+      "SourceId": "e-commerce-server",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "RelativePath": "avt/ccc323e5-b19d-48a1-861a-eee1ff3bdc89_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avt\\ccc323e5-b19d-48a1-861a-eee1ff3bdc89_1.jpeg"
+    },
+    {
+      "Identity": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\avt\\fa3738e3-3bb5-4cd1-838c-a1a993c0887d_1.jpeg",
+      "SourceId": "e-commerce-server",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\e-commerce\\e-commerce-server\\wwwroot\\",
+      "BasePath": "_content/e-commerce-server",
+      "RelativePath": "avt/fa3738e3-3bb5-4cd1-838c-a1a993c0887d_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avt\\fa3738e3-3bb5-4cd1-838c-a1a993c0887d_1.jpeg"
     }
   ]
 }

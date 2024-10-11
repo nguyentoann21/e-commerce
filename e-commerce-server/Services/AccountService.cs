@@ -89,11 +89,6 @@ namespace e_commerce_server.Services
             return hasLetter && hasNumber && hasSpecialChar;
         }
 
-        public Task<string> LoginAsync(LoginDto loginDto)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<UserDto> RegisterAsync(RegisterDto registerDto, List<string> roles)
         {
             // Begin a new database transaction

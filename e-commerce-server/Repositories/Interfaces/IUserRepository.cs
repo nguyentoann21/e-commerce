@@ -5,9 +5,7 @@ namespace e_commerce_server.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task<UserDto> RegisterAsync(RegisterDto registerDto, string role);
-        Task<UserDto> RegisterUserAsync(RegisterDto registerDto);
-        Task AssignRole(User user, string role);
-        Task<string> GetUserRoleAsync(Guid userId);
+        Task<User> GetUserByUsernameOrEmailAsync(string usernameOrEmail);
+        Task<List<string>> GetUserRolesAsync(User user); 
     }
 }

@@ -8,7 +8,6 @@ namespace e_commerce_server.Services.Interfaces
         Task AssignRole(User user, List<string> roles);
         bool IsStrongPassword(string password);
         bool IsStrongUsername(string username);
-        Task<string> LoginAsync(LoginDto loginDto);
         Task<UserDto> RegisterAsync(RegisterDto registerDto, List<string> roles);
         Task<UserDto> RegisterUserAsync(RegisterDto registerDto);
         Task<bool> UserHasRole(User user, string role);

@@ -5,7 +5,10 @@ using e_commerce_server.Repositories;
 using e_commerce_server.Repositories.Interfaces;
 using e_commerce_server.Services;
 using e_commerce_server.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace e_commerce_server
 {
@@ -16,12 +19,28 @@ namespace e_commerce_server
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            
+
+            // Configure JWT Authentication
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+                };
+            });
+
+            builder.Services.AddAuthorization();
+
             //Configure Entity Framework Core with SQL Server
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -32,6 +51,8 @@ namespace e_commerce_server
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IStorage, Storage>();
+            builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
 
             // Configuring CORS to allow all origins, headers, and methods
             builder.Services.AddCors(options =>
@@ -50,8 +71,17 @@ namespace e_commerce_server
             // Initialize seed data into the database from SeedData.cs
             using (var scope = app.Services.CreateScope())
             {
-                var services = scope.ServiceProvider;
-                SeedData.Initialize(services);
+                var _logger = app.Services.GetRequiredService<ILogger<Program>>();
+                try
+                {
+                    var services = scope.ServiceProvider;
+                    SeedData.Initialize(services, _logger);
+                } 
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An error occurred seeding the database");
+                }
+                
             }
 
             // Configure the HTTP request pipeline
